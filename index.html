@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dalia Arafa | Virtual Assistant</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2317130F' stroke='%23B79F82' stroke-width='3'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23F6EFE6' font-family='Georgia,serif' font-style='italic'%3ED%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Dalia Arafa, Virtual Assistant combining seasoned executive-support experience with modern training. Organised, proactive support for inbox, calendar and daily operations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&family=Pinyon+Script&display=swap">
+<style>
+:root{
+  --ink:#17130F; --cream:#F6EFE6; --sand:#E8DDCE; --taupe-light:#D5C9BA; --taupe:#6B5F53; --taupe-mid:#8C7E71;
+  --gold:#B79F82; --gold-text:#8A6F4E; --line:rgba(23,19,15,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Jost',system-ui,sans-serif;font-size:17px;line-height:1.55}
+a{color:var(--taupe)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.caps{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;text-transform:uppercase;letter-spacing:.06em}
+.script{font-family:'Pinyon Script',cursive;font-weight:400;color:var(--gold-text)}
+.eyebrow{font-size:14px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-text);margin:0 0 14px}
+
+.topbar{background:var(--ink);color:var(--cream);text-align:center;font-size:13px;letter-spacing:.34em;text-transform:uppercase;padding:10px 16px}
+
+header.nav{position:sticky;top:0;z-index:10;background:rgba(246,239,230,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.mono{width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px}
+.brand span.n{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+nav a{margin-left:22px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--taupe)}
+nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{background:var(--taupe-light);padding:56px 0;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-140px;top:-170px;width:560px;height:560px;border-radius:50%;background:var(--sand);opacity:.75}
+.hero::after{content:"";position:absolute;left:-90px;bottom:-130px;width:300px;height:300px;border-radius:50%;border:1px solid var(--gold);opacity:.6}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.tag{display:inline-block;background:var(--ink);color:var(--cream);font-size:13px;letter-spacing:.3em;text-transform:uppercase;padding:8px 14px;margin-bottom:16px}
+.hero h1{margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(42px,7vw,76px);line-height:1}
+.hero .script{display:block;font-size:clamp(38px,6vw,64px);line-height:1.1;margin:10px 0 24px}
+.hero p.lead{font-size:18px;max-width:520px;margin:0 0 22px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 30px;font-size:14px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--cream)}
+.btn.primary:hover{background:var(--taupe);border-color:var(--taupe)}
+.btn.ghost{color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--cream)}
+
+.portrait{position:relative;width:min(100%,320px);aspect-ratio:1;margin:0 auto;border-radius:50%;background:var(--taupe);display:grid;place-items:center;color:var(--cream);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:120px;overflow:hidden;border:8px solid var(--cream);box-shadow:0 0 0 1px var(--gold)}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.ring{position:absolute;inset:-14px;border-radius:50%;border:1px solid var(--gold)}
+.chip{position:absolute;z-index:2;background:var(--cream);border:1px solid var(--line);padding:10px 16px;display:flex;align-items:baseline;gap:8px;box-shadow:0 10px 24px rgba(23,19,15,.14);animation:rise .8s ease both}
+.chip b{font-family:'Cormorant Garamond',serif;font-size:30px;line-height:1;color:var(--ink)}
+.chip span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--taupe)}
+.c1{right:-24px;top:26px}
+.c2{right:-36px;top:62%;animation-delay:.15s}
+.c3{left:-14px;bottom:4px;animation-delay:.3s}
+.hero .wrap>div:first-child{animation:rise .8s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.chip,.hero .wrap>div:first-child{animation:none}}
+.portrait-wrap{position:relative;width:min(100%,320px);margin:0 auto}
+
+.quote{background:var(--ink);color:var(--cream);text-align:center;padding:26px 24px}
+.quote p{margin:0 auto;max-width:720px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(24px,3.4vw,34px);line-height:1.35}
+
+section{padding:48px 0}
+h2.sec{font-family:'Cormorant Garamond',serif;font-weight:500;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(30px,4.5vw,40px);line-height:1.1;margin:0 0 22px}
+
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.art img{display:block;width:100%;aspect-ratio:6/5;object-fit:cover;object-position:40% 60%}
+.strengths{display:grid;gap:20px}
+.strengths>div{display:grid;grid-template-columns:60px 1fr;column-gap:16px;align-items:center}
+.strengths .ic{width:60px;height:60px;border-radius:50%;background:var(--ink);display:grid;place-items:center;grid-row:1/3;margin:0}
+.strengths svg{width:30px;height:30px;stroke:var(--cream);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.strengths h3{margin:0 0 4px;font-family:'Cormorant Garamond',serif;text-transform:uppercase;letter-spacing:.06em;font-size:22px;font-weight:600}
+.strengths p{margin:0;font-size:16px;color:var(--taupe)}
+
+.sand{background:var(--sand)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:var(--taupe);color:var(--cream);padding:22px 22px}
+.card h3{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;margin:0 0 8px}
+.card p{margin:0;font-size:17px;color:#EDE3D6}
+
+.car{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.car .step{border-top:3px solid var(--ink);padding-top:16px}
+.car .t{font-size:14px;font-weight:500;letter-spacing:.3em;color:var(--gold-text);margin-bottom:8px}
+.car p{margin:0}
+.note{margin-top:22px;font-size:15px;color:var(--taupe)}
+
+.xp{display:grid;grid-template-columns:200px 1fr;gap:6px 28px;padding:14px 0;border-bottom:1px solid var(--line)}
+.xp .when{font-size:15px;letter-spacing:.08em;color:var(--gold-text)}
+.xp h3{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;margin:0 0 4px}
+.xp p{margin:0;color:var(--taupe);font-size:17px}
+
+.badge{display:flex;gap:28px;align-items:center;flex-wrap:wrap;background:var(--cream);border:1px solid var(--line);padding:30px}
+.badge .b{flex:0 0 auto;width:92px;height:92px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-items:center;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.1;border:1px solid var(--gold)}
+.badge h3{margin:0 0 6px;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600}
+.badge p{margin:0;color:var(--taupe)}
+
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:44px}
+.about p{margin:0 0 16px;color:var(--taupe)}
+.about ul{margin:0;padding:0;list-style:none}
+.about li{padding:11px 0;border-bottom:1px solid var(--line)}
+
+.contact{background:var(--ink);color:var(--cream);text-align:center;position:relative;overflow:hidden}
+.contact .wrap{position:relative;z-index:1}
+.glow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.glow .halo{animation:pulse 7s ease-in-out infinite}
+.glow .flow{stroke-dasharray:150 720;animation:flow 10s linear infinite}
+.glow .f2{animation-duration:13s;animation-delay:-4s}
+.glow .f3{animation-duration:16s;animation-delay:-9s}
+@keyframes flow{to{stroke-dashoffset:-870}}
+@keyframes pulse{0%,100%{opacity:.25}50%{opacity:.5}}
+.topbar{position:relative}
+.topbar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,#B79F82 25%,#F3E6D0 50%,#B79F82 75%,transparent);opacity:.9}
+@media (prefers-reduced-motion:reduce){.glow .halo,.glow .flow{animation:none}.glow .flow{stroke-dasharray:none;opacity:.5}}
+.contact .eyebrow{color:var(--gold)}
+.contact h2.sec{color:var(--cream);margin-bottom:12px}
+.contact .script{color:var(--gold);font-size:42px;display:block;margin-bottom:18px}
+.contact p{color:#D9CFC1;max-width:560px;margin:0 auto}
+.contact .btns{justify-content:center;margin-top:30px}
+.contact .btn.primary{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.contact .btn.primary:hover{background:var(--gold);border-color:var(--gold)}
+.contact .btn.ghost{color:var(--cream);border-color:var(--cream)}
+.contact .btn.ghost:hover{background:var(--cream);color:var(--ink)}
+
+.prog{display:grid;grid-template-columns:230px 1fr;gap:34px;align-items:center;background:#FFFDF6;border:1px solid var(--line);padding:26px 28px}
+.pring{width:170px;height:170px;border-radius:50%;background:conic-gradient(var(--gold-text) 0 86%,var(--sand) 86% 100%);display:grid;place-items:center;margin:0 auto 12px}
+.pring span{width:128px;height:128px;border-radius:50%;background:#FFFDF6;display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:600}
+.pcap{margin:0;text-align:center;font-size:15px;line-height:1.5;color:var(--taupe)}
+.pcap strong{color:var(--ink);font-weight:500}
+.mods{list-style:none;margin:0;padding:0}
+.mods li{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);font-size:16px}
+.mods li:last-child{border-bottom:0}
+.mods .sc{white-space:nowrap;font-size:14px;letter-spacing:.04em;color:var(--taupe)}
+.mods .ok{color:#2F6B3F;font-weight:500}
+@media (max-width:860px){.prog{grid-template-columns:1fr;gap:22px;padding:22px 18px}.mods li{font-size:15px}}
+.proofs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:18px;align-items:start}
+.proofs figure{margin:0;background:#FFFDF6;border:1px solid var(--line);padding:12px}
+.proofs figure>a{display:block;border:1px solid var(--line);background:#fff}
+.proofs img{display:block;width:100%;height:auto}
+.proofs figcaption{margin-top:10px;font-size:15px;color:var(--taupe);line-height:1.4}
+.proofs figcaption a{color:var(--taupe);text-decoration:underline}
+.proofs figcaption strong{display:block;color:var(--ink);font-weight:500;font-size:16px}
+.proofs.sm{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.proofs.sm figcaption{font-size:14px}
+.proofs.sm figcaption strong{font-size:15px}
+@media (max-width:1000px){.proofs.sm{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.proofs{grid-template-columns:1fr}.proofs.sm{grid-template-columns:repeat(2,minmax(0,1fr))}}
+footer{padding:24px 0;font-size:14px;color:var(--taupe);text-align:center;background:var(--cream)}
+
+@media (max-width:860px){
+  .hero{padding:36px 0}
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .portrait-wrap{order:-1;width:min(70%,300px)}
+  .c1{right:-16px}.c2{right:-26px}.c3{left:-8px}
+  .chip{padding:8px 12px}.chip b{font-size:24px}.chip span{font-size:11px}
+  .duo{grid-template-columns:1fr;gap:24px}
+  .grid,.car{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;gap:28px}
+  .xp{grid-template-columns:1fr}
+  section{padding:36px 0}
+  nav a{margin-left:14px;font-size:13px}
+}
+.hint{letter-spacing:.04em;text-transform:none;font-size:14px;color:var(--taupe);margin-left:10px}
+.flips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:18px}
+.flip{all:unset;box-sizing:border-box;display:block;height:150px;perspective:900px;cursor:pointer}
+.flip:focus-visible{outline:2px solid var(--gold,#B08D57);outline-offset:3px}
+.flip .fi{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s}
+.flip.on .fi{transform:rotateY(180deg)}
+.flip .ff,.flip .fb{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;padding:16px;border:1px solid var(--line);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.flip .ff{background:#FFFDF6;color:var(--ink)}
+.flip .fb{background:#1C1612;color:#F5EEE2;transform:rotateY(180deg)}
+.flip em{font-style:normal;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe)}
+.flip .fb em{color:#C9B38A}
+.flip strong{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;line-height:1.15}
+.flip .fb span{font-size:15px;color:#E5DACA}
+@media (max-width:1000px){.flips{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){.flip .fi{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar">Virtual Assistant &middot; Executive Support</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="mono" aria-hidden="true">D</span><span class="n">Dalia Arafa</span></a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#learning">Learning</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="Dalia_Arafa_C.V.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="tag">Cairo, Egypt &middot; Working remotely</span>
+      <h1>Virtual<br>Assistant</h1>
+      <span class="script">Executive support, beautifully organised</span>
+      <p class="lead">Bringing balance and order to your business, with seasoned experience and modern Virtual Assistant training.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://calendly.com/dalia-arafa-proton/intro-call-with-dalia-arafa-15-min" target="_blank" rel="noopener">Book a call</a>
+        <a class="btn ghost" href="#services">See what I do</a>
+      </div>
+    </div>
+    <div class="portrait-wrap">
+      <!-- The circle shows hero.jpg (keep it next to this file). To use your own portrait instead, save it as hero.jpg. -->
+      <div class="portrait">D<img src="hero.jpg" alt="A laptop showing a Virtual Assistant website, a cup of coffee, a notebook and a gold pen on a desk" onerror="this.remove()"></div>
+      <div class="ring" aria-hidden="true"></div>
+      <div class="chip c1"><b>01</b><span>Challenge</span></div>
+      <div class="chip c2"><b>02</b><span>Action</span></div>
+      <div class="chip c3"><b>03</b><span>Result</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="quote">
+  <p>&ldquo;Your time is valuable. Focus on your zone of genius. I&rsquo;ll handle the rest.&rdquo;</p>
+</div>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Why work with me</p>
+    <h2 class="sec">Support you can rely on</h2>
+    <div class="duo">
+    <div class="art">
+      <img src="scene.jpg" alt="A laptop and a cup of coffee on a desk by a sunset window" loading="lazy">
+    </div>
+    <div class="strengths">
+      <div>
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="1"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></div>
+        <h3>Confidential</h3><p>Trusted with chairman-level correspondence.</p>
+      </div>
+      <div>
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg></div>
+        <h3>Organised</h3><p>Calendars, files and follow-ups in order.</p>
+      </div>
+      <div>
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 7v5l3 2"></path></svg></div>
+        <h3>Responsive</h3><p>Replies within 24 hours.</p>
+      </div>
+      <div>
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M4 12h16M12 4c3 3 3 13 0 16M12 4c-3 3-3 13 0 16"></path></svg></div>
+        <h3>Cross-cultural</h3><p>At ease with international teams.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="sand">
+  <div class="wrap">
+    <p class="eyebrow">Services</p>
+    <h2 class="sec">Calm, organised support</h2>
+    <div class="grid">
+      <div class="card"><h3>Inbox &amp; calendar</h3><p>Email triage, scheduling, reminders and follow-ups, so nothing slips through.</p></div>
+      <div class="card"><h3>Executive support</h3><p>Correspondence, board and meeting materials, agendas and minutes, and confidential follow-up.</p></div>
+      <div class="card"><h3>Document control</h3><p>Filing systems, document tracking and standardised workflows that keep records easy to find.</p></div>
+      <div class="card"><h3>Reporting &amp; Excel</h3><p>Reports, pivot tables and monthly closing support using advanced Excel.</p></div>
+      <div class="card"><h3>Travel &amp; logistics</h3><p>Travel arrangements, visas, permits and meeting logistics, handled with care for deadlines.</p></div>
+      <div class="card"><h3>Vendor &amp; invoice coordination</h3><p>Invoice processing, contract follow-up and vendor communication.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <p class="eyebrow">My approach</p>
+    <h2 class="sec">Challenge. Action. Result.</h2>
+    <div class="car">
+      <div class="step"><div class="t">CHALLENGE</div><p>Invoice processing was taking about three weeks.</p></div>
+      <div class="step"><div class="t">ACTION</div><p>Led invoice processing and monthly closing, coordinating operations, finance and contracts.</p></div>
+      <div class="step"><div class="t">RESULT</div><p>Processing time reduced from 3 weeks to 10 days.</p></div>
+    </div>
+    <p class="note">A real result from my previous work in an oil &amp; gas joint venture.</p>
+  </div>
+</section>
+
+<section id="learning" class="sand">
+  <div class="wrap">
+    <p class="eyebrow">Training &amp; projects</p>
+    <h2 class="sec">Always learning, always applying</h2>
+    <div class="prog">
+      <div>
+        <div class="pring" role="img" aria-label="86 percent complete"><span>86%</span></div>
+        <p class="pcap">ALX Africa &middot; Virtual Assistant Program<br><strong>6 of 7 modules completed</strong></p>
+      </div>
+      <ul class="mods">
+        <li><span>Welcome to ALX</span><span class="sc ok">100% &middot; Validated</span></li>
+        <li><span>VA-1: Foundations &amp; Professional Identity</span><span class="sc ok">100% &middot; Validated</span></li>
+        <li><span>VA-2: Core Professional &amp; Soft Skills for VAs</span><span class="sc ok">97% &middot; Validated</span></li>
+        <li><span>VA-3: VA Tech Tools &amp; Digital Productivity</span><span class="sc ok">100% &middot; Validated</span></li>
+        <li><span>VA-4: Essential VA Task Execution</span><span class="sc ok">100% &middot; Validated</span></li>
+        <li><span>VA-5: VA Career Readiness &amp; Freelancing</span><span class="sc ok">100% &middot; Validated</span></li>
+        <li><span>VA-6: VA Specialisation, Toolkit &amp; Next Steps</span><span class="sc">In progress</span></li>
+      </ul>
+    </div>
+    <div class="grid" style="margin-top:20px">
+      <div class="card"><h3>Travel Pack project</h3><p>A complete four-day business trip plan for a trade show in Istanbul: flights, VIP meet and assist, hotel, itinerary, budget and etiquette guide.</p></div>
+      <div class="card"><h3>AI Career Essentials</h3><p>Now studying AI skills for work, so I can use modern tools to save clients time. 1 of 7 modules completed; in progress.</p></div>
+      <div class="card"><h3>Professional background</h3><p>Six years as a chairman's and board secretary, plus operations, contracts and accounts coordination across four industries.</p></div>
+    </div>
+    <p class="note">Education: MBA (2021), Arab Academy for Banking &amp; Financial Sciences &middot; Bachelor of Commerce, Accounting (2002), Cairo University.</p>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <p class="eyebrow">Credentials</p>
+    <h2 class="sec">Verified skills</h2>
+    <div class="badge">
+      <div class="b">Test<br>Gorilla</div>
+      <div>
+        <h3>Executive Assistant &middot; 89th percentile</h3>
+        <p>TestGorilla verified result: completed in 9:35 of 10:00 minutes, scoring in the 89th percentile. Valid through October 29, 2028. Also: ALX Africa Virtual Assistant Program (in progress), Oracle Learning Explorer, Aconex Specialist (2026) with the full Aconex Complete learning path completed at 100%, and seven AI and productivity certificates (Anthropic and Coursiv), listed below.</p>
+      </div>
+    </div>
+    <p class="eyebrow" style="margin:34px 0 0">AI &amp; productivity certificates <span class="hint">Tap a card to flip it</span></p>
+    <div class="flips">
+      <button type="button" class="flip" aria-pressed="false" aria-label="Claude Code 101. Press to flip for provider and completion details">
+        <span class="fi">
+          <span class="ff"><em>Certificate</em><strong>Claude Code 101</strong></span>
+          <span class="fb"><em>Completed</em><strong>Anthropic</strong><span>Certificate of completion</span></span>
+        </span>
+      </button>
+      <button type="button" class="flip" aria-pressed="false" aria-label="Master of Claude Code. Press to flip for provider and completion details">
+        <span class="fi">
+          <span class="ff"><em>Certificate</em><strong>Master of Claude Code</strong></span>
+          <span class="fb"><em>Completed</em><strong>Coursiv</strong><span>12 June 2026 &middot; 2 hours</span></span>
+        </span>
+      </button>
+      <button type="button" class="flip" aria-pressed="false" aria-label="Master of Claude. Press to flip for provider and completion details">
+        <span class="fi">
+          <span class="ff"><em>Certificate</em><strong>Master of Claude</strong></span>
+          <span class="fb"><em>Completed</em><strong>Coursiv</strong><span>17 May 2026 &middot; 5 hours</span></span>
+        </span>
+      </button>
+      <button type="button" class="flip" aria-pressed="false" aria-label="AI for Business Operations. Press to flip for provider and completion details">
+        <span class="fi">
+          <span class="ff"><em>Certificate</em><strong>AI for Business Operations</strong></span>
+          <span class="fb"><em>Completed</em><strong>Coursiv</strong><span>18 May 2026 &middot; 3 hours</span></span>
+        </span>
+      </button>
+      <button type="button" class="flip" aria-pressed="false" aria-label="AI for Accountants. Press to flip for provider and completion details">
+        <span class="fi">
+          <span class="ff"><em>Certificate</em><strong>AI for Accountants</strong></span>
+          <span class="fb"><em>Completed</em><strong>Coursiv</strong><span>25 April 2026 &middot; 3 hours</span></span>
+        </span>
+      </button>
+      <button type="button" class="flip" aria-pressed="false" aria-label="Master of Lovable. Press to flip for provider and completion details">
+        <span class="fi">
+          <span class="ff"><em>Certificate</em><strong>Master of Lovable</strong></span>
+          <span class="fb"><em>Completed</em><strong>Coursiv</strong><span>21 April 2026 &middot; 4 hours</span></span>
+        </span>
+      </button>
+      <button type="button" class="flip" aria-pressed="false" aria-label="Master of Kling. Press to flip for provider and completion details">
+        <span class="fi">
+          <span class="ff"><em>Certificate</em><strong>Master of Kling</strong></span>
+          <span class="fb"><em>Completed</em><strong>Coursiv</strong><span>22 April 2026 &middot; 3 hours</span></span>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="sand">
+  <div class="wrap">
+    <p class="eyebrow">About</p>
+    <h2 class="sec">Hello, I'm Dalia</h2>
+    <div class="about">
+      <div>
+        <p>I am an operations and administration professional with extensive experience across oil &amp; gas, aviation, hospitality and telecom, including six years as a chairman's and board secretary.</p>
+        <p>I bring that executive-level discipline, confidentiality and cross-cultural experience, together with modern training from the ALX Africa Virtual Assistant program, to remote support for busy founders, managers and teams.</p>
+      </div>
+      <ul>
+        <li><strong>Tools:</strong> Microsoft Excel, Outlook, Teams, Word, PowerPoint, Zoom, ChatGPT, Claude</li>
+        <li><strong>Languages:</strong> Arabic (native), English (professional)</li>
+        <li><strong>Availability:</strong> Full-time or project-based (3 months minimum), Cairo time (UTC+2)</li>
+        <li><strong>Response time:</strong> Within 24 hours</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <svg class="glow" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="gv" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#B79F82"/><stop offset=".35" stop-color="#F3E6D0"/><stop offset=".65" stop-color="#E3B07A"/><stop offset="1" stop-color="#B79F82"/>
+      </linearGradient>
+      <filter id="gb" x="-10%" y="-60%" width="120%" height="220%"><feGaussianBlur stdDeviation="8"/></filter>
+      <path id="p1" d="M-60 90 C 180 20, 360 170, 600 80 S 1010 10, 1260 100"/>
+      <path id="p2" d="M-60 350 C 220 420, 420 260, 640 340 S 1020 430, 1260 320"/>
+      <path id="p3" d="M-60 230 C 150 160, 330 330, 560 250 S 900 140, 1260 240"/>
+    </defs>
+    <g fill="none" stroke="url(#gv)" stroke-linecap="round">
+      <g filter="url(#gb)" class="halo">
+        <use href="#p1" stroke-width="12"/><use href="#p2" stroke-width="12"/><use href="#p3" stroke-width="8"/>
+      </g>
+      <use href="#p1" stroke-width="1" opacity=".3"/><use href="#p2" stroke-width="1" opacity=".3"/><use href="#p3" stroke-width="1" opacity=".2"/>
+      <use href="#p1" stroke-width="2.2" class="flow"/>
+      <use href="#p2" stroke-width="2.2" class="flow f2"/>
+      <use href="#p3" stroke-width="1.6" class="flow f3"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2 class="sec">Let's work together</h2>
+    <span class="script">Let's make your days lighter</span>
+    <p>Tell me what is taking your time and I will reply with how I can help.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://calendly.com/dalia-arafa-proton/intro-call-with-dalia-arafa-15-min" target="_blank" rel="noopener">Book a 15-minute call</a>
+      <a class="btn ghost" href="mailto:dalia.arafa@proton.me">dalia.arafa@proton.me</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/dalia-arafa-virtual-assistant" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="Dalia_Arafa_C.V.pdf">Download my CV</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Dalia Arafa</div>
+</footer>
+
+<script>
+document.querySelectorAll('.flip').forEach(function(b){b.addEventListener('click',function(){var on=b.classList.toggle('on');b.setAttribute('aria-pressed',on)})});
+</script>
+</body>
+</html>
